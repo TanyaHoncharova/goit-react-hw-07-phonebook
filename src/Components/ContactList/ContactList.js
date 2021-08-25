@@ -16,7 +16,6 @@ const ContactList = ({ contacts, onDeleteContact, isLoading }) => {
 
     return (
         <>
-            {isLoading && <LoaderComponent />}
             <ul className={style.list}>
                 {contacts.map(({ id, name, number }) => {
                     return (
@@ -53,7 +52,6 @@ ContactList.propTypes = {
 
 const mapStateToProps = (state) => ({
     contacts: contactsSelectors.getVisibleContacts(state),
-    isLoading: contactsSelectors.getLoading(state),
 
 });
 
